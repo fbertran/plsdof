@@ -1,0 +1,73 @@
+\name{benchmark.regression}
+\Rdversion{1.1}
+\alias{benchmark.regression}
+\title{Comparison of  Partial Least Squares Regression, Principal Components Regression and Ridge Regression.
+}
+\description{This function computes the test error over several runs  for (a) PLS, (b) PCR (c) Ridge Regression and (d) the null model, that
+is the mean of \code{y}. In the first three cases,
+the optimal model is selected via cross-validation.
+}
+\usage{
+benchmark.regression(X, y, m, R,ratio, verbose,k, nsamples, use.kernel,supervised)
+}
+\arguments{
+ \item{X}{matrix of predictor observations.
+}
+  \item{y}{vector of response observations. The length of \code{y} is the same as the number of rows of \code{X}.
+}
+  \item{m}{maximal number of components for PLS. Default is \code{m=ncol(X)}.
+}
+\item{R}{number of runs. Default is 20.}
+\item{ratio}{ratio  no of training examples/(no of training examples + no of test examples). Default is 0.8}
+\item{verbose}{If \code{TRUE}, the functions plots the progress of the function. Default is \code{TRUE}.}
+\item{k}{number of cross-validation splits. Default is 10.}
+\item{nsamples}{number of data points. Default is \code{nrow(X)}. }
+\item{use.kernel}{Use kernel representation for PLS? Default is \code{use.kernel=FALSE}.}
+\item{supervised}{Should the principal components be sorted by decreasing squared correlation to the response? Default is FALSE.}   
+  
+}
+\details{The function computes the test error, the cross-validation-optimal model parameters, their corresponding Degrees of Freedom, and the
+sum-of-squared-residuals (SSR) for PLS and PCR. 
+}
+\value{
+\item{MSE}{data frame of size R x 4. It contains the test error for the four different methods for each of the R runs.}
+\item{M}{data frame of size R x 4. It contains the optimal model parameters for the four different methods for each of the R runs.}
+\item{DoF}{data frame of size R x 4. It contains the Degrees of Freedom (corresponding to \code{M}) for the four different methods for each of the R runs.}
+\item{res.pls}{matrix of size R x (ncol(X+1)). It contains the SSR for PLS for each of the R runs.}
+\item{res.pcr}{matrix of size R x (ncol(X+1)). It contains the SSR for PCR for each of the R runs.}
+\item{DoF.all}{matrix of size R x (ncol(X+1)). It contains the Degrees of Freedom for PLS for all components for each of the R runs.}
+
+}
+\references{
+
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association 106 (494)
+\url{https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107}
+
+}
+\author{Nicole Kraemer
+}
+
+\seealso{
+\code{\link{pls.cv}}, \code{\link{pcr.cv}}, \code{\link{benchmark.pls}}
+}
+\examples{
+\donttest{
+# Boston Housing data
+library(MASS)
+data(Boston)
+X<-as.matrix(Boston[,1:4]) # select the first 3 columns as predictor variables
+y<-as.vector(Boston[,14])
+
+my.benchmark<-benchmark.regression(X,y,ratio=0.5,R=10,k=5)
+
+# boxplot of the mean squared error
+
+boxplot(my.benchmark$MSE,outline=FALSE)
+
+# boxplot of the degrees of freedom, without the null model
+
+boxplot(my.benchmark$DoF[,-4])
+}
+}
+
+\keyword{multivariate}

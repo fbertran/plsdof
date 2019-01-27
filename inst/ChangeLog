@@ -1,0 +1,31 @@
+****************************************************
+*** Changes for R-package plsdof                 ***
+*** Nicole Kraemer <kraemer_r_packages@yahoo.de> ***
+****************************************************
+
+
+--- Version 0.2-8 (August 27, 2018)
+
+Package orphaned, maintainer changed.
+
+--- Version 0.2-7 (September 04, 2014)
+
+Updated maintainer's email address.
+
+--- Version 0.2-6 (March 19, 2013) ---
+
+- Cross-validation is now based on mean squared error as well as on the correlation to the response. 
+- Instead of cross-validation based on a random split, the split can also be specified using the groups option in the
+  functions pls.cv, pcr.cv, and ridge.cv.
+- You can specify if you want to compute the jackknife coefficients. For very high-dimensional data sets, we recommend
+  to set conpute.jackknife to FALSE.
+- Supervised PCR: You can choose if you want to sort the principal components in pcr and pcr.cv according to their squared correlation
+  to the response. 
+
+
+--- Version 0.2-5 (February 06, 2013) ---
+
+- The runtime for pcr and pcr.cv is improved, especially in the p>>n scenario.
+	(1) Instead of an eigen decomposition of t(X)%*%X, a singular value decomposition of X is used.
+	(2) It is possible to specify the maximum number of principal components
+
