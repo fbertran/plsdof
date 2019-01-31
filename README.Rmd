@@ -30,7 +30,7 @@ The plsdof package provides Degrees of Freedom estimates
 
 
 
-The plsdof package was completely coded and developped by Nicole Kraemer and Mikio L. Braun. N. Kraemer, M. Sugiyama (2012). It is mainly based on the article "The Degrees of Freedom of Partial Least Squares Regression", *Journal of the American Statistical Association*, **106**(494):697-705, [doi:10.1198/jasa.2011.tm10107](http://dx.doi.org/doi:10.1198/jasa.2011.tm10107).
+The plsdof package was fully coded and developped by Nicole Kraemer and Mikio L. Braun. It is mainly based on the article by N. Kraemer, M. Sugiyama (2012): "The Degrees of Freedom of Partial Least Squares Regression", *Journal of the American Statistical Association*, **106**(494):697-705, [doi:10.1198/jasa.2011.tm10107](http://dx.doi.org/doi:10.1198/jasa.2011.tm10107).
 
 
 Yet due to the regular updates in CRAN policies, it was removed from the CRAN and orphaned since the former maintainer had stopped updating the package. The plsdof package is required by several packages of Frédéric Bertrand who was then selected as the new maintainer since late 2018. 
@@ -86,4 +86,49 @@ y<-rnorm(n)
 
 # compute linear PLS
 pls.object<-pls.ic(X,y,m=ncol(X))
+```
+
+### Boston Housing data
+Creating response vector and predictors' matrix
+```{r bhd}
+data(Boston)
+X<-as.matrix(Boston[,-14])
+y<-as.vector(Boston[,14])
+```
+
+Compute PLS coefficients for the first 5 components. 
+```{r pls1}
+my.pls1<-pls.model(X,y,m=5,compute.DoF=TRUE)
+my.pls1
+```
+
+Plot Degrees of Freedom and add naive estimate.
+```{r pls1pnaive}
+plot(0:5,my.pls1$DoF,pch="*",cex=3,xlab="components",ylab="DoF",ylim=c(0,14))
+lines(0:5,1:6,lwd=3)
+```
+
+Model selection with the Bayesian Information criterion
+```{r pls2}
+my.pls2<-pls.ic(X,y,criterion="bic")
+my.pls2
+```
+
+Model selection based on cross-validation. 
+
+```{r pls3}
+my.pls3<-pls.cv(X,y,compute.covariance=TRUE)
+my.pls3
+```
+
+Returns the estimated covariance matrix of the regression coefficients
+```{r pls3cov}
+my.vcov<-vcov(my.pls3)
+my.vcov
+```
+
+Standard deviation of the regression coefficients
+```{r pls3sd}
+my.sd<-sqrt(diag(my.vcov)) 
+my.sd
 ```
