@@ -28,3 +28,5 @@ X-CRAN-Original-Maintainer: Nicole Kraemer
 X-CRAN-Comment: Orphaned and corrected on 2018-07-21 as check problems
         were not corrected despite reminders.
 RoxygenNote: 6.1.1
+URL: https://github.com/fbertran/plsdof
+BugReports: https://github.com/fbertran/plsdof/issues
