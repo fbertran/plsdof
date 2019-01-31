@@ -13,9 +13,10 @@ Description: The plsdof package provides Degrees of Freedom estimates
         or on cross-validation. Estimates for the mean and covariance
         of the PLS regression coefficients are available. They allow
         the construction of approximate confidence intervals and the
-        application of test procedures. Further, cross-validation
-        procedures for Ridge Regression and Principal Components
-        Regression are available.
+        application of test procedures (Kramer and Sugiyama 
+        2012 <doi:10.1198/jasa.2011.tm10107>).
+        Further, cross-validation procedures for Ridge Regression and 
+        Principal Components Regression are available.
 License: GPL (>= 2)
 LazyLoad: yes
 Packaged: 2018-07-21 16:59:31 UTC; hornik

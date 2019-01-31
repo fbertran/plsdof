@@ -5,7 +5,7 @@ citEntry(entry = "Article",
   author       = personList(as.person("N. Kraemer"),
                    as.person("M. Sugiyama")),
   journal      = "Journal of the American Statistical Association",
-  year         = "2011",
+  year         = "2012",
   volume       = "106",
   number       = "494",  
 
