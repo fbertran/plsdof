@@ -35,6 +35,8 @@ The plsdof package was fully coded and developped by Nicole Kraemer and Mikio L.
 
 Yet due to the regular updates in CRAN policies, it was removed from the CRAN and orphaned since the former maintainer had stopped updating the package. The plsdof package is required by several packages of Frédéric Bertrand who was then selected as the new maintainer since late 2018. 
 
+This website and these examples were created by F. Bertrand.
+
 
 ## Installation
 
