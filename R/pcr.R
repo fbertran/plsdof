@@ -1,3 +1,42 @@
+#' Principal Components Regression
+#' 
+#' This function computes the Principal Components Regression (PCR) fit.
+#' 
+#' The function first scales all predictor variables to unit variance, and then
+#' computes the PCR fit for all components. Is \code{supervised=TRUE}, we sort
+#' the principal correlation according to the squared correlation to the
+#' response.
+#' 
+#' @param X matrix of predictor observations.
+#' @param y vector of response observations. The length of \code{y} is the same
+#' as the number of rows of \code{X}.
+#' @param scale Should the predictor variables be scaled to unit variance?
+#' Default is \code{TRUE}.
+#' @param m maximal number of principal components. Default is
+#' \code{m=min(ncol(X),nrow(X)-1)}.
+#' @param eps precision. Eigenvalues of the correlation matrix of \code{X} that
+#' are smaller than \code{eps} are set to 0. The default value is
+#' \code{eps=10^{-6}.}
+#' @param supervised Should the principal components be sorted by decreasing
+#' squared correlation to the response? Default is FALSE.
+#' @return \item{coefficients}{matrix of regression coefficients, including the
+#' coefficients of the null model, i.e. the constant model \code{mean(y)}. }
+#' \item{intercept}{vector of intercepts, including the intercept of the null
+#' model, i.e. the constant model \code{mean(y)}. }
+#' @author Nicole Kraemer
+#' @seealso \code{\link{pcr.cv}}, \code{\link{pls.cv}}
+#' @keywords multivariate
+#' @examples
+#' 
+#' n<-50 # number of observations
+#' p<-15 # number of variables
+#' X<-matrix(rnorm(n*p),ncol=p)
+#' y<-rnorm(n)
+#' 
+#' my.pcr<-pcr(X,y,m=10)
+#' 
+#' 
+#' @export pcr
 pcr<-function (X, y, scale = TRUE, m = min(ncol(X), nrow(X) - 1), 
     eps = 1e-06,supervised=FALSE) 
 {

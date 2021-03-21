@@ -1,3 +1,50 @@
+#' Kernel Partial Least Squares Fit
+#' 
+#' This function computes the Partial Least Squares fit. This algorithm scales
+#' mainly in the number of observations.
+#' 
+#' We first standardize \code{X} to zero mean and unit variance.
+#' 
+#' @param X matrix of predictor observations.
+#' @param y vector of response observations. The length of \code{y} is the same
+#' as the number of rows of \code{X}.
+#' @param m maximal number of Partial Least Squares components. Default is
+#' \code{m}=ncol(X).
+#' @param compute.jacobian Should the first derivative of the regression
+#' coefficients be computed as well? Default is \code{FALSE}
+#' @param DoF.max upper bound on the Degrees of Freedom. Default is
+#' \code{min(ncol(X)+1,nrow(X)-1)}.
+#' @return \item{coefficients}{matrix of regression coefficients}
+#' \item{intercept}{vector of regression intercepts} \item{DoF}{Degrees of
+#' Freedom} \item{sigmahat}{vector of estimated model error} \item{Yhat}{matrix
+#' of fitted values} \item{yhat}{vector of squared length of fitted values}
+#' \item{RSS}{vector of residual sum of error} \item{covariance}{\code{NULL}
+#' object.} \item{TT}{matrix of normalized PLS components}
+#' @author Nicole Kraemer, Mikio L. Braun
+#' @seealso \code{\link{linear.pls.fit}},
+#' \code{\link{pls.cv}},\code{\link{pls.model}}, \code{\link{pls.ic}}
+#' @references Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of
+#' Partial Least Squares Regression". Journal of the American Statistical
+#' Association 106 (494)
+#' \url{https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107}
+#' 
+#' Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and
+#' Efficient Model Selection", Proceedings of the 24th International Conference
+#' on Machine Learning, Omni Press, 441 - 448
+#' @keywords multivariate
+#' @examples
+#' 
+#' n<-50 # number of observations
+#' p<-5 # number of variables
+#' X<-matrix(rnorm(n*p),ncol=p)
+#' y<-rnorm(n)
+#' 
+#' 
+#' pls.object<-kernel.pls.fit(X,y,m=5,compute.jacobian=TRUE)
+#' 
+#' 
+#' 
+#' @export kernel.pls.fit
 kernel.pls.fit=function (X, y, m=ncol(X), compute.jacobian=FALSE,DoF.max=min(ncol(X)+1,nrow(X)-1)) {
     p <- ncol(X)
     n <- nrow(X)

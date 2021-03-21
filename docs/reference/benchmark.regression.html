@@ -6,23 +6,39 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Comparison of  Partial Least Squares Regression, Principal Components Regression and Ridge Regression. — benchmark.regression • plsdof</title>
+<title>Comparison of Partial Least Squares Regression, Principal Components
+Regression and Ridge Regression. — benchmark.regression • plsdof</title>
+
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,12 +46,15 @@
 
 
 
-<meta property="og:title" content="Comparison of  Partial Least Squares Regression, Principal Components Regression and Ridge Regression. — benchmark.regression" />
 
-<meta property="og:description" content="This function computes the test error over several runs  for (a) PLS, (b) PCR (c) Ridge Regression and (d) the null model, that
-is the mean of y. In the first three cases,
-the optimal model is selected via cross-validation." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Comparison of Partial Least Squares Regression, Principal Components
+Regression and Ridge Regression. — benchmark.regression" />
+<meta property="og:description" content="This function computes the test error over several runs for (a) PLS, (b) PCR
+(c) Ridge Regression and (d) the null model, that is the mean of y.
+In the first three cases, the optimal model is selected via
+cross-validation." />
+<meta property="og:image" content="/logo.png" />
+
 
 
 
@@ -49,9 +68,10 @@ the optimal model is selected via cross-validation." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,7 +85,7 @@ the optimal model is selected via cross-validation." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">plsdof</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3-0</span>
       </span>
     </div>
 
@@ -73,7 +93,7 @@ the optimal model is selected via cross-validation." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -84,11 +104,10 @@ the optimal model is selected via cross-validation." />
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/fbertran/plsdof">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/fbertran/plsdof/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -99,26 +118,38 @@ the optimal model is selected via cross-validation." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Comparison of  Partial Least Squares Regression, Principal Components Regression and Ridge Regression.</h1>
-    
+    <h1>Comparison of Partial Least Squares Regression, Principal Components
+Regression and Ridge Regression.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/fbertran/plsdof/blob/master/R/benchmark.regression.R'><code>R/benchmark.regression.R</code></a></small>
     <div class="hidden name"><code>benchmark.regression.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
-    <p>This function computes the test error over several runs  for (a) PLS, (b) PCR (c) Ridge Regression and (d) the null model, that
-is the mean of <code>y</code>. In the first three cases,
-the optimal model is selected via cross-validation.</p>
-    
+    <p>This function computes the test error over several runs for (a) PLS, (b) PCR
+(c) Ridge Regression and (d) the null model, that is the mean of <code>y</code>.
+In the first three cases, the optimal model is selected via
+cross-validation.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>benchmark.regression</span>(<span class='no'>X</span>, <span class='no'>y</span>, <span class='no'>m</span>, <span class='no'>R</span>,<span class='no'>ratio</span>, <span class='no'>verbose</span>,<span class='no'>k</span>, <span class='no'>nsamples</span>, <span class='no'>use.kernel</span>,<span class='no'>supervised</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>benchmark.regression</span><span class='op'>(</span>
+  <span class='va'>X</span>,
+  <span class='va'>y</span>,
+  m <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>ncol</a></span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>,
+  R <span class='op'>=</span> <span class='fl'>20</span>,
+  ratio <span class='op'>=</span> <span class='fl'>0.8</span>,
+  verbose <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  k <span class='op'>=</span> <span class='fl'>10</span>,
+  nsamples <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/nrow.html'>nrow</a></span><span class='op'>(</span><span class='va'>X</span><span class='op'>)</span>,
+  use.kernel <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  supervised <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -128,7 +159,8 @@ the optimal model is selected via cross-validation.</p>
     </tr>
     <tr>
       <th>y</th>
-      <td><p>vector of response observations. The length of <code>y</code> is the same as the number of rows of <code>X</code>.</p></td>
+      <td><p>vector of response observations. The length of <code>y</code> is the same
+as the number of rows of <code>X</code>.</p></td>
     </tr>
     <tr>
       <th>m</th>
@@ -140,11 +172,13 @@ the optimal model is selected via cross-validation.</p>
     </tr>
     <tr>
       <th>ratio</th>
-      <td><p>ratio  no of training examples/(no of training examples + no of test examples). Default is 0.8</p></td>
+      <td><p>ratio no of training examples/(no of training examples + no of
+test examples). Default is 0.8</p></td>
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p>If <code>TRUE</code>, the functions plots the progress of the function. Default is <code>TRUE</code>.</p></td>
+      <td><p>If <code>TRUE</code>, the functions plots the progress of the
+function. Default is <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>k</th>
@@ -152,55 +186,65 @@ the optimal model is selected via cross-validation.</p>
     </tr>
     <tr>
       <th>nsamples</th>
-      <td><p>number of data points. Default is <code><a href='https://www.rdocumentation.org/packages/base/topics/nrow'>nrow(X)</a></code>.</p></td>
+      <td><p>number of data points. Default is <code><a href='https://rdrr.io/r/base/nrow.html'>nrow(X)</a></code>.</p></td>
     </tr>
     <tr>
       <th>use.kernel</th>
-      <td><p>Use kernel representation for PLS? Default is <code>use.kernel=FALSE</code>.</p></td>
+      <td><p>Use kernel representation for PLS? Default is
+<code>use.kernel=FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>supervised</th>
-      <td><p>Should the principal components be sorted by decreasing squared correlation to the response? Default is FALSE.</p></td>
+      <td><p>Should the principal components be sorted by decreasing
+squared correlation to the response? Default is FALSE.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The function computes the test error, the cross-validation-optimal model parameters, their corresponding Degrees of Freedom, and the
-sum-of-squared-residuals (SSR) for PLS and PCR.</p>
-    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     
 
-<dt>MSE</dt><dd><p>data frame of size R x 4. It contains the test error for the four different methods for each of the R runs.</p></dd>
-<dt>M</dt><dd><p>data frame of size R x 4. It contains the optimal model parameters for the four different methods for each of the R runs.</p></dd>
-<dt>DoF</dt><dd><p>data frame of size R x 4. It contains the Degrees of Freedom (corresponding to <code>M</code>) for the four different methods for each of the R runs.</p></dd>
-<dt>res.pls</dt><dd><p>matrix of size R x (ncol(X+1)). It contains the SSR for PLS for each of the R runs.</p></dd>
-<dt>res.pcr</dt><dd><p>matrix of size R x (ncol(X+1)). It contains the SSR for PCR for each of the R runs.</p></dd>
-<dt>DoF.all</dt><dd><p>matrix of size R x (ncol(X+1)). It contains the Degrees of Freedom for PLS for all components for each of the R runs.</p></dd>
+<dt>MSE</dt><dd><p>data frame of size R x 4. It contains the test error for
+the four different methods for each of the R runs.</p></dd> <dt>M</dt><dd><p>data frame of
+size R x 4. It contains the optimal model parameters for the four different
+methods for each of the R runs.</p></dd> <dt>DoF</dt><dd><p>data frame of size R x 4. It
+contains the Degrees of Freedom (corresponding to <code>M</code>) for the four
+different methods for each of the R runs.</p></dd> <dt>res.pls</dt><dd><p>matrix of size R x
+(ncol(X+1)). It contains the SSR for PLS for each of the R runs.</p></dd>
+<dt>res.pcr</dt><dd><p>matrix of size R x (ncol(X+1)). It contains the SSR for PCR
+for each of the R runs.</p></dd> <dt>DoF.all</dt><dd><p>matrix of size R x (ncol(X+1)). It
+contains the Degrees of Freedom for PLS for all components for each of the R
+runs.</p></dd>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    
+    <p>The function computes the test error, the cross-validation-optimal model
+parameters, their corresponding Degrees of Freedom, and the
+sum-of-squared-residuals (SSR) for PLS and PCR.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    
-    <p>Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association 106 (494)
-<a href='https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107'>https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107</a></p>
-    
+    <p>Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least
+Squares Regression". Journal of the American Statistical Association 106
+(494) <a href='https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107'>https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='pls.cv.html'>pls.cv</a></code>, <code><a href='pcr.cv.html'>pcr.cv</a></code>, <code><a href='benchmark.pls.html'>benchmark.pls</a></code></p></div>
-    
+    <div class='dont-index'><p><code><a href='pls.cv.html'>pls.cv</a></code>, <code><a href='pcr.cv.html'>pcr.cv</a></code>,
+<code><a href='benchmark.pls.html'>benchmark.pls</a></code></p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Nicole Kraemer</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Boston Housing data</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>MASS</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>Boston</span>)
-<span class='no'>X</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/matrix'>as.matrix</a></span>(<span class='no'>Boston</span>[,<span class='fl'>1</span>:<span class='fl'>4</span>]) <span class='co'># select the first 3 columns as predictor variables</span>
-<span class='no'>y</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/vector'>as.vector</a></span>(<span class='no'>Boston</span>[,<span class='fl'>14</span>])
+    <pre class="examples"><div class='input'>
+<span class='co'># \donttest{</span>
+<span class='co'># Boston Housing data</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://www.stats.ox.ac.uk/pub/MASS4/'>MASS</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>Boston</span><span class='op'>)</span>
+<span class='va'>X</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='va'>Boston</span><span class='op'>[</span>,<span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>)</span> <span class='co'># select the first 3 columns as predictor variables</span>
+<span class='va'>y</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/vector.html'>as.vector</a></span><span class='op'>(</span><span class='va'>Boston</span><span class='op'>[</span>,<span class='fl'>14</span><span class='op'>]</span><span class='op'>)</span>
 
-<span class='no'>my.benchmark</span><span class='kw'>&lt;-</span><span class='fu'>benchmark.regression</span>(<span class='no'>X</span>,<span class='no'>y</span>,<span class='kw'>ratio</span><span class='kw'>=</span><span class='fl'>0.5</span>,<span class='kw'>R</span><span class='kw'>=</span><span class='fl'>10</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>5</span>)</div><div class='output co'>#&gt; iteration no  1  
+<span class='va'>my.benchmark</span><span class='op'>&lt;-</span><span class='fu'>benchmark.regression</span><span class='op'>(</span><span class='va'>X</span>,<span class='va'>y</span>,ratio<span class='op'>=</span><span class='fl'>0.5</span>,R<span class='op'>=</span><span class='fl'>10</span>,k<span class='op'>=</span><span class='fl'>5</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; iteration no  1  
 #&gt; iteration no  2  
 #&gt; iteration no  3  
 #&gt; iteration no  4  
@@ -212,31 +256,22 @@ sum-of-squared-residuals (SSR) for PLS and PCR.</p>
 #&gt; iteration no  10  </div><div class='input'>
 <span class='co'># boxplot of the mean squared error</span>
 
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/boxplot'>boxplot</a></span>(<span class='no'>my.benchmark</span>$<span class='no'>MSE</span>,<span class='kw'>outline</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='img'><img src='benchmark.regression-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/graphics/boxplot.html'>boxplot</a></span><span class='op'>(</span><span class='va'>my.benchmark</span><span class='op'>$</span><span class='va'>MSE</span>,outline<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='img'><img src='benchmark.regression-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># boxplot of the degrees of freedom, without the null model</span>
 
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/boxplot'>boxplot</a></span>(<span class='no'>my.benchmark</span>$<span class='no'>DoF</span>[,-<span class='fl'>4</span>])</div><div class='img'><img src='benchmark.regression-2.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'><a href='https://rdrr.io/r/graphics/boxplot.html'>boxplot</a></span><span class='op'>(</span><span class='va'>my.benchmark</span><span class='op'>$</span><span class='va'>DoF</span><span class='op'>[</span>,<span class='op'>-</span><span class='fl'>4</span><span class='op'>]</span><span class='op'>)</span>
+</div><div class='img'><img src='benchmark.regression-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
+
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#references">References</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Nicole Kraemer</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -244,13 +279,16 @@ sum-of-squared-residuals (SSR) for PLS and PCR.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

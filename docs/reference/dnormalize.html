@@ -8,21 +8,36 @@
 
 <title>Derivative of normalization function — dnormalize • plsdof</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +45,12 @@
 
 
 
-<meta property="og:title" content="Derivative of normalization function — dnormalize" />
 
-<meta property="og:description" content="This function computes the derivative of the function $$v\mapsto \frac{v}{\|v\|}$$  with respect to y." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Derivative of normalization function — dnormalize" />
+<meta property="og:description" content="This function computes the derivative of the function $$v\mapsto
+\frac{v}{\|v\|}$$ with respect to y." />
+<meta property="og:image" content="/logo.png" />
+
 
 
 
@@ -47,9 +64,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -63,7 +81,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">plsdof</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3-0</span>
       </span>
     </div>
 
@@ -71,7 +89,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -82,11 +100,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/fbertran/plsdof">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/fbertran/plsdof/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -97,24 +114,24 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Derivative of normalization function</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/fbertran/plsdof/blob/master/R/dnormalize.R'><code>R/dnormalize.R</code></a></small>
     <div class="hidden name"><code>dnormalize.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
-    <p>This function computes the derivative of the function $$v\mapsto \frac{v}{\|v\|}$$  with respect to y.</p>
-    
+    <p>This function computes the derivative of the function $$v\mapsto
+\frac{v}{\|v\|}$$ with respect to y.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dnormalize</span>(<span class='no'>v</span>, <span class='no'>dv</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>dnormalize</span><span class='op'>(</span><span class='va'>v</span>, <span class='va'>dv</span><span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -124,55 +141,52 @@
     </tr>
     <tr>
       <th>dv</th>
-      <td><p>derivative of v with respect to y. As y is a vector of length n, the derivative is a matrix of size nxn.</p></td>
+      <td><p>derivative of v with respect to y. As y is a vector of length n,
+the derivative is a matrix of size nxn.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>the Jacobian matrix of the normalization function. This is a matrix of size nxn.</p>
-    
+    <p>the Jacobian matrix of the normalization function. This is a matrix
+of size nxn.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The first derivative of the normalization operator is
-$$\frac{\partial}{\partial y}\left(v\mapsto \frac{v}{\|v\|}\right)=\frac{1}{\|v\|}\left(I_n - \frac{v v^ \top}{v^\top v}\right) \frac{\partial v}{\partial y}$$</p>
-    
+$$\frac{\partial}{\partial y}\left(v\mapsto
+\frac{v}{\|v\|}\right)=\frac{1}{\|v\|}\left(I_n - \frac{v v^ \top}{v^\top
+v}\right) \frac{\partial v}{\partial y}$$</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least Squares Regression". Journal of the American Statistical Association 106 (494)
+    <p>Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of
+Partial Least Squares Regression". Journal of the American Statistical
+Association 106 (494)
 <a href='https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107'>https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107</a></p>
-<p>Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and Efficient Model Selection", Proceedings of the 24th International Conference on Machine Learning, Omni Press, 441 - 448</p>
-    
+<p>Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and
+Efficient Model Selection", Proceedings of the 24th International Conference
+on Machine Learning, Omni Press, 441 - 448</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='normalize.html'>normalize</a></code></p></div>
-    
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Nicole Kraemer, Mikio L. Braun</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>v</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/stats/topics/Normal'>rnorm</a></span>(<span class='fl'>15</span>)
-<span class='no'>dv</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/diag'>diag</a></span>(<span class='fl'>15</span>)
-<span class='no'>d.object</span><span class='kw'>&lt;-</span><span class='fu'>dnormalize</span>(<span class='no'>v</span>,<span class='no'>dv</span>)</div></pre>
+    <pre class="examples"><div class='input'>
+<span class='va'>v</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>15</span><span class='op'>)</span>
+<span class='va'>dv</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/diag.html'>diag</a></span><span class='op'>(</span><span class='fl'>15</span><span class='op'>)</span>
+<span class='va'>d.object</span><span class='op'>&lt;-</span><span class='fu'>dnormalize</span><span class='op'>(</span><span class='va'>v</span>,<span class='va'>dv</span><span class='op'>)</span>
+
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#references">References</a></li>
-
-      <li><a href="#see-also">See also</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Nicole Kraemer, Mikio L. Braun</p>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -180,13 +194,16 @@ $$\frac{\partial}{\partial y}\left(v\mapsto \frac{v}{\|v\|}\right)=\frac{1}{\|v\
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

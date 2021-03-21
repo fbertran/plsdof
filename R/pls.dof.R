@@ -1,5 +1,44 @@
-
-
+#' Computation of the Degrees of Freedom
+#' 
+#' This function computes the Degrees of Freedom using the Krylov
+#' representation of PLS.
+#' 
+#' This computation of the Degrees of Freedom is based on the equivalence of
+#' PLS regression and the projection of the response vector \code{y} onto the
+#' Krylov space spanned by \deqn{Ky,K^2 y,...,K^m y.} Details can be found in
+#' Kraemer and Sugiyama (2011).
+#' 
+#' @param pls.object object returned by \code{linear.pls.fit} or by
+#' \code{kernel.pls.fit}
+#' @param n number of observations
+#' @param y vector of response observations.
+#' @param K kernel matrix X X^t.
+#' @param m number of components
+#' @param DoF.max upper bound on the Degrees of Freedom.
+#' @return \item{coefficients}{matrix of regression coefficients}
+#' \item{intercept}{vector of regression intercepts} \item{DoF}{Degrees of
+#' Freedom} \item{sigmahat}{vector of estimated model error} \item{Yhat}{matrix
+#' of fitted values} \item{yhat}{vector of squared length of fitted values}
+#' \item{RSS}{vector of residual sum of error} \item{TT}{matrix of normalized
+#' PLS components}
+#' @author Nicole Kraemer, Mikio L. Braun
+#' @seealso \code{\link{pls.model}}, \code{\link{pls.ic}}
+#' @references
+#' 
+#' Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least
+#' Squares Regression". Journal of the American Statistical Association 106
+#' (494) \url{https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107}
+#' 
+#' Kraemer, N., Sugiyama M., Braun, M.L. (2009) "Lanczos Approximations for the
+#' Speedup of Kernel Partial Least Squares Regression." Proceedings of the
+#' Twelfth International Conference on Artificial Intelligence and Statistics
+#' (AISTATS), p. 272-279
+#' @keywords multivariate
+#' @examples
+#' 
+#' # this is an internal function
+#' 
+#' @export pls.dof
 pls.dof=function(pls.object,n,y,K,m,DoF.max){
     TT<-pls.object$TT
     Yhat<-pls.object$Yhat[,2:(m+1)]
