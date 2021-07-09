@@ -3,7 +3,7 @@ Type: Package
 Title: Degrees of Freedom and Statistical Inference for Partial Least
         Squares Regression
 Depends: MASS
-Version: 0.3-0
+Version: 0.3-1
 Date: 2021-03-13
 Author: Nicole Kraemer, Mikio L. Braun
 Maintainer: Frederic Bertrand <frederic.bertrand@math.unistra.fr>

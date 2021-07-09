@@ -1,7 +1,11 @@
+# plsdof 0.3-1
+
+* Fix pls.ic function.
+
 # plsdof 0.3-0
 
 * Github actions.
-* Roxygen
+* Roxygen.
 
 # plsdof 0.2-9
 

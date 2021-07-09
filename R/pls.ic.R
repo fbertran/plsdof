@@ -97,7 +97,7 @@ pls.ic=function (X, y, m = min(ncol(X),nrow(X)-1),criterion="bic",naive=FALSE,us
         }
         }
         #cat(paste("DoF for ",m," components: ",DoF[1,m+1],"\n"))
-        DoF[(m:length(DoF))]=Inf
+        DoF[((m+2):length(DoF))]=Inf
     }
     if (min(DoF)>0){
     ic <- information.criteria(RSS, DoF, yhat = yhat, sigmahat = sigmahat, 
@@ -112,7 +112,7 @@ covariance<-pls.object$covariance
 if (compute.jacobian==TRUE){
     covariance=covariance[m.opt+1,,]
 }
-outlist=list(DoF = DoF, m.opt = m.opt,sigmahat=sigmahat,m.crash=m.crash,intercept=intercept,coefficients=coefficients,covariance=covariance)
+outlist=list(DoF = DoF, m.opt = m.opt,sigmahat=sigmahat,m.crash=m.crash,score=score,intercept=intercept,coefficients=coefficients,covariance=covariance)
 class(outlist)="plsdof"    
     return(outlist)
 }
