@@ -67,6 +67,6 @@ on Machine Learning, Omni Press, 441 - 448
 \author{
 Nicole Kraemer, Mikio L. Braun
 
-Maintainer: Frederic Bertrand <frederic.bertrand@math.unistra.fr>
+Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr.fr>
 }
 \keyword{package}

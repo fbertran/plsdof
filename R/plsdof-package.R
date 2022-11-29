@@ -22,7 +22,7 @@
 #' @docType package
 #' @author Nicole Kraemer, Mikio L. Braun
 #' 
-#' Maintainer: Frederic Bertrand <frederic.bertrand@@math.unistra.fr>
+#' Maintainer: Frederic Bertrand <frederic.bertrand@@utt.fr.fr>
 #' @seealso \code{\link{pls.model}}, \code{\link{pls.cv}}, \code{\link{pls.ic}}
 #' @references
 #' 

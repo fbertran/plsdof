@@ -1,3 +1,7 @@
+# plsdof 0.3-2
+
+* Change maintainer email address.
+
 # plsdof 0.3-1
 
 * Fix pls.ic function.
