@@ -6,7 +6,7 @@ Depends: MASS
 Version: 0.3-2
 Date: 2022-11-29
 Author: Nicole Kraemer, Mikio L. Braun
-Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr.fr>
+Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
 Description: The plsdof package provides Degrees of Freedom estimates
         for Partial Least Squares (PLS) Regression. Model selection for
         PLS is based on various information criteria (aic, bic, gmdl)
