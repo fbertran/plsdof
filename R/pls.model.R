@@ -20,7 +20,10 @@
 #' of Freedom of Partial Least Squares are computed. Default is
 #' \code{compute.DoF=FALSE}.
 #' @param compute.jacobian Should the first derivative of the regression
-#' coefficients be computed as well? Default is \code{FALSE}
+#' coefficients be computed as well? This remains independent from
+#' \code{compute.DoF}; callers can request covariance estimates while still
+#' returning the naive \code{1:(m + 1)} Degrees of Freedom sequence. Default is
+#' \code{FALSE}
 #' @param use.kernel Should the kernel representation be used to compute the
 #' solution. Default is \code{FALSE}.
 #' @param method.cor How should the correlation to the response be computed?
@@ -69,9 +72,6 @@
 pls.model<-function (X, y, m = ncol(X), Xtest = NULL, ytest = NULL, compute.DoF = FALSE, 
     compute.jacobian = FALSE, use.kernel = FALSE,method.cor="pearson") 
 {
-    if (compute.DoF == FALSE) {
-        compute.jacobian == FALSE
-    }
     n <- nrow(X)
     p <- ncol(X)
     X0 <- X
@@ -163,6 +163,8 @@ pls.model<-function (X, y, m = ncol(X), Xtest = NULL, ytest = NULL, compute.DoF 
             mse = apply(res^2, 2, mean)
         }
     }
+    # Keep covariance estimation available when compute.jacobian = TRUE even if
+    # pls.model() later falls back to the naive 1:(m + 1) DoF sequence.
     if (compute.DoF == FALSE) {
         DoF = 1:(m + 1)
         sigmahat = sqrt(RSS/(n - DoF))

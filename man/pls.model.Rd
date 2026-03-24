@@ -36,7 +36,10 @@ of Freedom of Partial Least Squares are computed. Default is
 \code{compute.DoF=FALSE}.}
 
 \item{compute.jacobian}{Should the first derivative of the regression
-coefficients be computed as well? Default is \code{FALSE}}
+coefficients be computed as well? This remains independent from
+\code{compute.DoF}; callers can request covariance estimates while still
+returning the naive \code{1:(m + 1)} Degrees of Freedom sequence. Default is
+\code{FALSE}}
 
 \item{use.kernel}{Should the kernel representation be used to compute the
 solution. Default is \code{FALSE}.}
