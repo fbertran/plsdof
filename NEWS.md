@@ -1,3 +1,8 @@
+# plsdof 0.5-0
+
+* Code updated to compute Jacobian even if naive DoF are selected
+* Added one test for better coverage
+
 # plsdof 0.4-0
 
 * Maintainer email update.

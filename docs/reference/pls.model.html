@@ -87,7 +87,10 @@ of Freedom of Partial Least Squares are computed. Default is
 
 <dt id="arg-compute-jacobian">compute.jacobian<a class="anchor" aria-label="anchor" href="#arg-compute-jacobian"></a></dt>
 <dd><p>Should the first derivative of the regression
-coefficients be computed as well? Default is <code>FALSE</code></p></dd>
+coefficients be computed as well? This remains independent from
+<code>compute.DoF</code>; callers can request covariance estimates while still
+returning the naive <code>1:(m + 1)</code> Degrees of Freedom sequence. Default is
+<code>FALSE</code></p></dd>
 
 
 <dt id="arg-use-kernel">use.kernel<a class="anchor" aria-label="anchor" href="#arg-use-kernel"></a></dt>
@@ -188,7 +191,7 @@ International Conference on Artificial Intelligence and Stastistics, 272 -
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>

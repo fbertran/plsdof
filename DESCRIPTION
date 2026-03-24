@@ -3,8 +3,8 @@ Type: Package
 Title: Degrees of Freedom and Statistical Inference for Partial Least
         Squares Regression
 Depends: MASS
-Version: 0.4-0
-Date: 2025-09-14
+Version: 0.5-0
+Date: 2026-03-24
 Authors@R: c(
 	person(given = "Nicole", family= "Kraemer", role = c("aut")),
 	person(given = "Mikio L.", family= "Braun", role = c("aut")),
