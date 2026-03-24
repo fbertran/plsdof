@@ -13,7 +13,10 @@ knitr::opts_chunk$set(
 # Degrees of Freedom and Statistical Inference for Partial Least Squares Regression
 ## Maintainer: Frédéric Bertrand
 
+<https://doi.org/10.32614/CRAN.package.plsdof>
+
 <!-- badges: start -->
+[![DOI](https://img.shields.io/badge/doi-10.32614/CRAN.package.plsdof-blue.svg)](https://doi.org/10.32614/CRAN.package.plsdof)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/fbertran/plsdof/workflows/R-CMD-check/badge.svg)](https://github.com/fbertran/plsdof/actions)
@@ -21,7 +24,6 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/plsdof)](https://cran.r-project.org/package=plsdof)
 [![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/plsdof)](https://cran.r-project.org/package=plsdof)
 [![GitHub Repo stars](https://img.shields.io/github/stars/fbertran/plsdof?style=social)](https://github.com/fbertran/plsdof)
-[![DOI](https://zenodo.org/badge/167805443.svg)](https://zenodo.org/badge/latestdoi/167805443)
 <!-- badges: end -->
 
 
@@ -38,8 +40,7 @@ The plsdof package provides Degrees of Freedom estimates
 
 
 
-The plsdof package was fully coded and developped by Nicole Kraemer and Mikio L. Braun. It is mainly based on the article by N. Kraemer, M. Sugiyama (2012): "The Degrees of Freedom of Partial Least Squares Regression", *Journal of the American Statistical Association*, **106**(494):697-705, [doi:10.1198/jasa.2011.tm10107](http://dx.doi.org/doi:10.1198/jasa.2011.tm10107).
-
+The plsdof package was fully coded and developped by Nicole Kraemer and Mikio L. Braun. It is mainly based on the article by N. Kraemer, M. Sugiyama (2012): "The Degrees of Freedom of Partial Least Squares Regression", *Journal of the American Statistical Association*, **106**(494):697-705, [doi:10.1198/jasa.2011.tm10107](https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107).
 
 Yet due to the regular updates in CRAN policies, it was removed from the CRAN and orphaned since the former maintainer had stopped updating the package. The plsdof package is required by several packages of Frédéric Bertrand who was then selected as the new maintainer since late 2018. 
 

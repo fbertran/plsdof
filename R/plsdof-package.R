@@ -1,28 +1,9 @@
-#' Degrees of Freedom and Statistical Inference for Partial Least Squares
-#' Regression
+#' @keywords internal
+#' @aliases plsdof-package plsdof NULL
+#' @author This package has been written by Nicole Kraemer, Mikio L. Braun. 
 #' 
-#' The plsdof package provides Degrees of Freedom estimates for Partial Least
-#' Squares (PLS) Regression.
+#' Maintainer: Frederic Bertrand <frederic.bertrand@@lecnam.net.fr>
 #' 
-#' Model selection for PLS is based on various information criteria (aic, bic,
-#' gmdl) or on cross-validation. Estimates for the mean and covariance of the
-#' PLS regression coefficients are available. They allow the construction of
-#' approximate confidence intervals and the application of test procedures.
-#' 
-#' Further, cross-validation procedures for Ridge Regression and Principal
-#' Components Regression are available.
-#' 
-#' \tabular{ll}{ Package: \tab plsdof\cr Type: \tab Package\cr Version: \tab
-#' 0.2-9\cr Date: \tab 2019-31-01\cr License: \tab GPL (>=2)\cr LazyLoad: \tab
-#' yes\cr }
-#' 
-#' @name plsdof-package
-#' @aliases plsdof-package plsdof
-#' 
-#' @docType package
-#' @author Nicole Kraemer, Mikio L. Braun
-#' 
-#' Maintainer: Frederic Bertrand <frederic.bertrand@@utt.fr.fr>
 #' @seealso \code{\link{pls.model}}, \code{\link{pls.cv}}, \code{\link{pls.ic}}
 #' @references
 #' 
@@ -33,14 +14,8 @@
 #' Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and
 #' Efficient Model Selection", Proceedings of the 24th International Conference
 #' on Machine Learning, Omni Press, 441 - 448
-#' @keywords package
 #' 
-#' @import MASS
-#' @importFrom graphics plot
-#' @importFrom stats coef cor sd
-#' 
-#' 
-#' @examples
+#' #' @examples
 #' 
 #' # Boston Housing data
 #' data(Boston)
@@ -67,6 +42,11 @@
 #' my.vcov<-vcov(mypls3)
 #' my.sd<-sqrt(diag(my.vcov)) # standard deviation of the regression coefficients
 #' 
+"_PACKAGE"
+
+#' @import MASS
+#' @importFrom graphics plot
+#' @importFrom stats coef cor sd
 #' 
 NULL
 

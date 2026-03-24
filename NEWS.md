@@ -1,6 +1,13 @@
+# plsdof 0.4-0
+
+* Maintainer email update.
+* Added unit test.
+* Fix package to get rid of CRAN check notes
+* Added package doi
+
 # plsdof 0.3-2
 
-* Change maintainer email address.
+* Maintainer email update.
 
 # plsdof 0.3-1
 

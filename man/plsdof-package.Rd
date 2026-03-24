@@ -4,26 +4,22 @@
 \name{plsdof-package}
 \alias{plsdof-package}
 \alias{plsdof}
-\title{Degrees of Freedom and Statistical Inference for Partial Least Squares
-Regression}
+\title{plsdof: Degrees of Freedom and Statistical Inference for Partial Least Squares Regression}
 \description{
-The plsdof package provides Degrees of Freedom estimates for Partial Least
-Squares (PLS) Regression.
-}
-\details{
-Model selection for PLS is based on various information criteria (aic, bic,
-gmdl) or on cross-validation. Estimates for the mean and covariance of the
-PLS regression coefficients are available. They allow the construction of
-approximate confidence intervals and the application of test procedures.
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Further, cross-validation procedures for Ridge Regression and Principal
-Components Regression are available.
-
-\tabular{ll}{ Package: \tab plsdof\cr Type: \tab Package\cr Version: \tab
-0.2-9\cr Date: \tab 2019-31-01\cr License: \tab GPL (>=2)\cr LazyLoad: \tab
-yes\cr }
+The plsdof package provides Degrees of Freedom estimates for Partial Least Squares (PLS) Regression. Model selection for PLS is based on various information criteria (aic, bic, gmdl) or on cross-validation. Estimates for the mean and covariance of the PLS regression coefficients are available. They allow the construction of approximate confidence intervals and the application of test procedures (Kramer and Sugiyama 2012 \doi{10.1198/jasa.2011.tm10107}). Further, cross-validation procedures for Ridge Regression and Principal Components Regression are available.
 }
-\examples{
+\references{
+Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least
+Squares Regression". Journal of the American Statistical Association 106
+(494) \url{https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107}
+
+Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and
+Efficient Model Selection", Proceedings of the 24th International Conference
+on Machine Learning, Omni Press, 441 - 448
+
+#' @examples
 
 # Boston Housing data
 data(Boston)
@@ -49,24 +45,13 @@ mypls2<-pls.ic(X,y,criterion="bic")
 mypls3<-pls.cv(X,y,compute.covariance=TRUE)
 my.vcov<-vcov(mypls3)
 my.sd<-sqrt(diag(my.vcov)) # standard deviation of the regression coefficients
-
-
-}
-\references{
-Kraemer, N., Sugiyama M. (2011). "The Degrees of Freedom of Partial Least
-Squares Regression". Journal of the American Statistical Association 106
-(494) \url{https://www.tandfonline.com/doi/abs/10.1198/jasa.2011.tm10107}
-
-Kraemer, N., Braun, M.L. (2007) "Kernelizing PLS, Degrees of Freedom, and
-Efficient Model Selection", Proceedings of the 24th International Conference
-on Machine Learning, Omni Press, 441 - 448
 }
 \seealso{
 \code{\link{pls.model}}, \code{\link{pls.cv}}, \code{\link{pls.ic}}
 }
 \author{
-Nicole Kraemer, Mikio L. Braun
+This package has been written by Nicole Kraemer, Mikio L. Braun. 
 
-Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr.fr>
+Maintainer: Frederic Bertrand <frederic.bertrand@lecnam.net.fr>
 }
-\keyword{package}
+\keyword{internal}

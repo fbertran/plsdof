@@ -1,14 +1,35 @@
 citHeader("To cite plsdof in publications please use:")
 
-citEntry(entry = "Article",
+titl <- meta$Title
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("R package version", meta$Version)
+doi <- paste0("10.32614/CRAN.package.", meta$Package)
+urldoi <- paste0("https://doi.org/", doi)
+
+bibentry(bibtype="Manual",
+         title = titl,
+         author = c(
+	person(given = "Nicole", family= "Kraemer"),
+	person(given = "Mikio L.", family= "Braun"),
+	person(given = "Frederic", family= "Bertrand")),
+         year         = year,
+         note         = vers,
+         url          = "https://CRAN.R-project.org/package=plsdof",
+         doi         = doi,
+         textVersion = 
+         paste("Frédéric Bertrand and Myriam Maumy-Bertrand (",year ,"). ", 
+               titl, ", ", vers, ". doi:", doi, ".", sep=""
+               )
+)
+
+bibentry(bibtype = "Article",
   title        = "The Degrees of Freedom of Partial Least Squares Regression",
-  author       = personList(as.person("N. Kraemer"),
-                   as.person("M. Sugiyama")),
+  author       = c(person(given = "Nicole", family= "Kraemer"),
+                   person(given = "Masashi", family= "Sugiyama")),
   journal      = "Journal of the American Statistical Association",
   year         = "2012",
   volume       = "106",
   number       = "494",  
-
   textVersion  =
   paste("N. Kraemer, M. Sugiyama (2012).",
         "The Degrees of Freedom of Partial Least Squares Regression",

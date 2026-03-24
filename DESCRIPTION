@@ -3,10 +3,15 @@ Type: Package
 Title: Degrees of Freedom and Statistical Inference for Partial Least
         Squares Regression
 Depends: MASS
-Version: 0.3-2
-Date: 2022-11-29
-Author: Nicole Kraemer, Mikio L. Braun
-Maintainer: Frederic Bertrand <frederic.bertrand@utt.fr>
+Version: 0.4-0
+Date: 2025-09-14
+Authors@R: c(
+	person(given = "Nicole", family= "Kraemer", role = c("aut")),
+	person(given = "Mikio L.", family= "Braun", role = c("aut")),
+	person(given = "Frederic", family= "Bertrand", role = c("aut", "cre"), 
+	email = "frederic.bertrand@lecnam.net", comment = c(ORCID = "0000-0002-0837-8281")))
+Author: Nicole Kraemer [aut], Mikio L. Braun [aut], Frederic Bertrand [aut, cre] (ORCID: <https://orcid.org/0000-0002-0837-8281>)
+Maintainer: Frederic Bertrand <frederic.bertrand@lecnam.net>
 Description: The plsdof package provides Degrees of Freedom estimates
         for Partial Least Squares (PLS) Regression. Model selection for
         PLS is based on various information criteria (aic, bic, gmdl)
@@ -17,6 +22,7 @@ Description: The plsdof package provides Degrees of Freedom estimates
         2012 <doi:10.1198/jasa.2011.tm10107>).
         Further, cross-validation procedures for Ridge Regression and 
         Principal Components Regression are available.
+Suggests: testthat (>= 3.0.0)
 License: GPL (>= 2)
 LazyLoad: yes
 NeedsCompilation: no
@@ -26,6 +32,7 @@ X-CRAN-Original-Maintainer: Nicole Kraemer
         <kraemer_r_packages@yahoo.de>
 X-CRAN-Comment: Orphaned and corrected on 2018-07-21 as check problems
         were not corrected despite reminders.
-RoxygenNote: 7.2.1
-URL: https://github.com/fbertran/plsdof/, https://fbertran.github.io/plsdof/
-BugReports: https://github.com/fbertran/plsdof/issues/
+RoxygenNote: 7.3.3
+URL: https://github.com/fbertran/plsdof, https://fbertran.github.io/plsdof/
+BugReports: https://github.com/fbertran/plsdof/issues
+Config/testthat/edition: 3

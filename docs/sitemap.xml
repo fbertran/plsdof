@@ -1,90 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/benchmark.pls.html</loc>
-  </url>
-  <url>
-    <loc>/reference/benchmark.regression.html</loc>
-  </url>
-  <url>
-    <loc>/reference/coef.plsdof.html</loc>
-  </url>
-  <url>
-    <loc>/reference/compute.lower.bound.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dA.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dnormalize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dvvtz.html</loc>
-  </url>
-  <url>
-    <loc>/reference/first.local.minimum.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/information.criteria.html</loc>
-  </url>
-  <url>
-    <loc>/reference/kernel.pls.fit.html</loc>
-  </url>
-  <url>
-    <loc>/reference/krylov.html</loc>
-  </url>
-  <url>
-    <loc>/reference/linear.pls.fit.html</loc>
-  </url>
-  <url>
-    <loc>/reference/normalize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pcr.cv.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pcr.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pls.cv.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pls.dof.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pls.ic.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pls.model.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plsdof-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ridge.cv.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tr.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vcov.plsdof.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vvtz.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://fbertran.github.io/plsdof/404.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/authors.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/index.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/news/index.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/benchmark.pls.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/benchmark.regression.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/coef.plsdof.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/compute.lower.bound.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/dA.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/dnormalize.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/dvvtz.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/first.local.minimum.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/index.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/information.criteria.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/kernel.pls.fit.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/krylov.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/linear.pls.fit.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/normalize.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/pcr.cv.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/pcr.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/pls.cv.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/pls.dof.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/pls.ic.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/pls.model.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/plsdof-package.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/ridge.cv.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/tr.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/vcov.plsdof.html</loc></url>
+<url><loc>https://fbertran.github.io/plsdof/reference/vvtz.html</loc></url>
 </urlset>
+
